@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Fitness</string>
+    <array name="categories">
+        <item>Klata</item>
+        <item>Plecy</item>
+        <item>Barki</item>
+        <item>Nogi</item>
+        <item>Triceps</item>
+        <item>Biceps</item>
+        <item>Brzuch</item>
+
+    </array>
+
 </resources>

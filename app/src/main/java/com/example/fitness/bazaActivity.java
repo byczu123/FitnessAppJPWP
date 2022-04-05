@@ -41,5 +41,11 @@ public class bazaActivity extends AppCompatActivity {
                 Toast.makeText(bazaActivity.this, Exercises.get(position), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+    }
+    public void launchDodaj(View v){
+        Intent i = new Intent(this, dodajCwiczeniaActivity.class);
+        startActivity(i);
     }
 }
