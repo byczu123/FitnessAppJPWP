@@ -12,19 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:layout_marginTop="100dp"
-        android:text="GarzelByczek Fitness App"
+        android:text="@string/title"
         android:textColor="#2165E7"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
-        />
+        app:layout_constraintVertical_bias="0.16" />
 
     <Button
         android:id="@+id/bazaCwiczenId"
@@ -34,25 +33,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:onClick="launchBaza"
-        android:text="BAZA ĆWICZEŃ"
+        android:text="@string/base"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="402dp"
-        />
+        tools:layout_editor_absoluteY="402dp" />
 
     <Button
         android:id="@+id/planId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scenariuszeId"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:onClick="launchPlan"
-        android:text="Twój plan"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        android:text="@string/userPlan"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/scenariuszeId"
@@ -62,10 +59,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:onClick="launchScenariusze"
-        android:text="Gotowe plany treningowe"
+        android:text="@string/readyPlans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </RelativeLayout>

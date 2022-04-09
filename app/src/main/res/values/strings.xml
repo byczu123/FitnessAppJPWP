@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Fitness</string>
+    <string name="add">Dodaj</string>
+    <string name="base">Baza ćwiczeń</string>
+    <string name="exName">Nazwa ćwiczenia</string>
+    <string name="description">Opis</string>
+    <string name="intLvl">Poziom trudności [%]</string>
+    <string name="readyPlans">Gotowe plany treningowe</string>
+    <string name="userPlan">Twój plan</string>
+    <string name="title">MyFitnessApp</string>
+    <array name="readyPlansArray">
+        <item>Push-Pull</item>
+        <item>FBW</item>
+        <item>Split</item>
+        <item>Upper Lower</item>
+        <item>Upper Body Priority</item>
+        <item>Lower Body Priority</item>
+        <item>Fat burning</item>
+    </array>
     <array name="categories">
         <item>Klata</item>
         <item>Plecy</item>
@@ -8,7 +25,6 @@
         <item>Triceps</item>
         <item>Biceps</item>
         <item>Brzuch</item>
-
     </array>
 
 </resources>
