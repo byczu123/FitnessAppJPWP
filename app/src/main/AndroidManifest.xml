@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness">
         <activity
+
             android:name=".dodajCwiczeniaActivity"
             android:exported="false" />
         <activity

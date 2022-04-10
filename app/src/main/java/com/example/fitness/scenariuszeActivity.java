@@ -19,27 +19,6 @@ public class scenariuszeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenariusze);
-        PlanBase = findViewById(R.id.ExBase);
-        ArrayList<String> Plany = new ArrayList<>();
-        Plany.add("Push-Pull");
-        Plany.add("FBW");
-        Plany.add("Split");
-        Plany.add("Upper Lower");
-        Plany.add("Upper Body Priority");
-        Plany.add("Lower Body Priority");
-        Plany.add("Fat burning");
-        ArrayAdapter<String> ExercisesAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                Plany
-        );
-        PlanBase.setAdapter(ExercisesAdapter);
-        PlanBase.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(scenariuszeActivity.this, Plany.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
+    }
 }

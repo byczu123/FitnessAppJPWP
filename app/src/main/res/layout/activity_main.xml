@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#000000">
 
 
     <TextView
@@ -16,7 +17,7 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/title"
-        android:textColor="#2165E7"
+        android:textColor="@color/colorAccent"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,6 +35,7 @@
         android:layout_marginTop="100dp"
         android:onClick="launchBaza"
         android:text="@string/base"
+        android:backgroundTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="402dp" />
 
@@ -45,7 +47,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="9dp"
+        android:backgroundTint="@color/colorAccent"
         android:layout_marginRight="10dp"
         android:onClick="launchPlan"
         android:text="@string/userPlan"
@@ -60,8 +63,11 @@
         android:layout_marginTop="10dp"
         android:onClick="launchScenariusze"
         android:text="@string/readyPlans"
+        android:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </RelativeLayout>

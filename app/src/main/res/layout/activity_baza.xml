@@ -12,16 +12,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="@string/base"
-
         />
 
-    <ListView
-        android:id="@+id/ExBase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="150dp"
-        android:entries="@array/categories"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fbAddEx"
@@ -32,7 +24,12 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="18dp"
         android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
         android:onClick="launchDodaj"
         android:text="@string/add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
