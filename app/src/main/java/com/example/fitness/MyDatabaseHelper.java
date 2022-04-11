@@ -1,8 +1,11 @@
 package com.example.fitness;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -28,7 +31,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + tableName + " (" +
-                ExIdColumn + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ExIdColumn + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NameOfExColumn + " TEXT, " + DescriptionColumn +
                 " TEXT, " + CategoryColumn + " TEXT, " +
                 PercentColumn + " INTEGER)";
@@ -38,6 +41,33 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + tableName);
+        onCreate(db);
+    }
 
+    void addEx(String cv_name, String cv_description, String cv_category, int cv_level){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(NameOfExColumn, cv_name);
+        cv.put(DescriptionColumn, cv_description);
+        cv.put(CategoryColumn, cv_category);
+        cv.put(PercentColumn, cv_level);
+        long result = db.insert(tableName, null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Nie udało się dodać ćwiczenia", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Dodano nowe ćwiczenie", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    Cursor injectData(){
+        String query = "SELECT * FROM " + tableName;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 }

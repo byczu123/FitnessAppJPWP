@@ -43,7 +43,7 @@
         android:layout_marginTop="510dp"
         android:entries="@array/categories"
         android:minHeight="50dp"
-        android:backgroundTint="@color/black"
+        android:background="@color/colorAccent"
         />
 
     <EditText
