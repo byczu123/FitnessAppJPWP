@@ -18,4 +18,8 @@ public class planActivity extends AppCompatActivity {
         Intent i = new Intent(this, bazaActivity.class);
         startActivity(i);
     }
+    public void launchDays(View v){
+        Intent i = new Intent(this, daysActivity.class);
+        startActivity(i);
+    }
 }

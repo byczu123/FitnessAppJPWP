@@ -36,6 +36,7 @@ public class dodajCwiczeniaActivity extends AppCompatActivity {
                         category.getSelectedItem().toString().trim(),
                         Integer.valueOf(level_input.getText().toString().trim()));
                 bazaActivity.recyclerView.setAdapter(bazaActivity.adapter);
+                setContentView(R.layout.activity_baza);
             }
         });
 
