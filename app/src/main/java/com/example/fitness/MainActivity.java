@@ -5,27 +5,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button buttonBase, buttonRoutine, buttonAdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    public void launchPlan(View v){
-        Intent i = new Intent(this, planActivity.class);
-        startActivity(i);
-    }
 
-    public void launchBaza(View v){
-        Intent i = new Intent(this, bazaActivity.class);
-        startActivity(i);
-    }
+        buttonBase.findViewById(R.id.bazaCwiczenId);
+        buttonAdd.findViewById(R.id.planId);
+        buttonRoutine.findViewById(R.id.scenariuszeId);
 
-    public void launchScenariusze(View v){
-        Intent i = new Intent(this, scenariuszeActivity.class);
-        startActivity(i);
-    }
+        buttonBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_baza);
+            }
+        });
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_dodaj_cwiczenia);
+            }
+        });
+
+        buttonRoutine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_plan);
+            }
+        });
+    }
 }

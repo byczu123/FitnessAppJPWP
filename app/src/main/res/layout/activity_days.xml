@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/days"
         android:textSize="28sp"/>
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -70,11 +71,19 @@
             android:text="@string/seven" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/buttonTest"
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fbAddDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radioGroup"
-       />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/next"
+        android:textAlignment="center"
+        android:textColor="#424242"
+        tools:ignore="TextContrastCheck" />
+
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class bazaActivity extends AppCompatActivity {
 
     static RecyclerView recyclerView;
-    FloatingActionButton floatingButton;
+    FloatingActionButton floatingActionButton;
     MyDatabaseHelper myDB;
     ArrayList <String> name, description, category;
     ArrayList <Integer> percent;
@@ -47,11 +47,18 @@ public class bazaActivity extends AppCompatActivity {
         adapter = new AdapterForRecycler(bazaActivity.this, name, description, category, percent);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(bazaActivity.this));
+
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fbAddEx);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_dodaj_cwiczenia);
+            }
+        });
+
     }
-    public void launchDodaj(View v){
-        Intent i = new Intent(this, dodajCwiczeniaActivity.class);
-        startActivity(i);
-    }
+
+
 
     void storeInArrays(){
         Cursor cursor = myDB.injectData();

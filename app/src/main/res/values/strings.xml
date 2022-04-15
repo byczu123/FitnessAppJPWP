@@ -16,6 +16,7 @@
     <string name="five">Five days</string>
     <string name="six">Six days</string>
     <string name="seven">Seven days</string>
+    <string name="next">Next</string>
     <array name="readyPlansArray">
         <item>Push-Pull</item>
         <item>FBW</item>
