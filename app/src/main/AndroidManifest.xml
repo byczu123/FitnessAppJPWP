@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label=""
+        android:label="@string/label"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness">
@@ -13,23 +13,23 @@
             android:name=".ShowEx"
             android:exported="false" />
         <activity
-            android:name=".dodajCwiczeniaActivity"
+            android:name=".AddExerciseActivity"
             android:exported="false"
-            android:parentActivityName=".bazaActivity" />
+            android:parentActivityName=".BaseActivity" />
         <activity
-            android:name=".scenariuszeActivity"
+            android:name=".ReadyWorkoutsActivity"
             android:exported="false"
              />
         <activity
-            android:name=".bazaActivity"
+            android:name=".BaseActivity"
             android:exported="false"
             />
         <activity
-            android:name=".planActivity"
+            android:name=".WorkoutRoutineActivity"
             android:exported="false"
              />
         <activity
-            android:name=".daysActivity"
+            android:name=".DaysActivity"
             android:exported="false"
             />
         <activity

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".dodajCwiczeniaActivity"
+    tools:context=".AddExerciseActivity"
     android:background="@color/black"
     >
 
@@ -14,13 +14,13 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="@string/exName"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:minHeight="50dp"
+        android:autofillHints=""
         android:background="@color/colorAccent"
-        android:autofillHints="" />
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/exName"
+        android:inputType="textPersonName"
+        android:minHeight="50dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -47,7 +47,6 @@
         android:entries="@array/categories"
         android:minHeight="50dp"
         />
-
 
 
     <EditText

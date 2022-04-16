@@ -4,27 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".planActivity">
+    tools:context=".BaseActivity">
 
-    <ListView
-        android:id="@+id/listPlan"
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/base"
+        />
+
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fbAdd"
+        android:id="@+id/fbAddEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="17dp"
         android:backgroundTint="@color/colorAccent"
-        android:onClick="launchDays"
+        android:gravity="center"
         android:text="@string/add"
-        android:textAlignment="center"
-        android:textColor="#424242"
-        tools:ignore="TextContrastCheck" />
+        android:onClick="launchDodaj" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize" />
 
 </RelativeLayout>

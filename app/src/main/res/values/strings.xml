@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Fitness</string>
-    <string name="add">Dodaj</string>
-    <string name="base">Baza ćwiczeń</string>
-    <string name="exName">Nazwa ćwiczenia</string>
-    <string name="description">Opis</string>
-    <string name="intLvl">Poziom trudności [%]</string>
-    <string name="readyPlans">Gotowe plany treningowe</string>
-    <string name="userPlan">Twój plan</string>
+    <string name="add">Add</string>
+    <string name="base">Exercise Database</string>
+    <string name="exName">Name of the exercise</string>
+    <string name="description">Description</string>
+    <string name="intLvl">RPE [%]</string>
+    <string name="readyPlans">Ready training plans</string>
+    <string name="userPlan">Your plan</string>
     <string name="title">MyFitnessApp</string>
     <string name="days">How many days in the week you want to work out?</string>
     <string name="one">One day</string>
@@ -17,6 +17,7 @@
     <string name="six">Six days</string>
     <string name="seven">Seven days</string>
     <string name="next">Next</string>
+    <string name="label">MyFitnessApp</string>
     <array name="readyPlansArray">
         <item>Push-Pull</item>
         <item>FBW</item>
@@ -27,13 +28,13 @@
         <item>Fat burning</item>
     </array>
     <array name="categories">
-        <item>Klata</item>
-        <item>Plecy</item>
-        <item>Barki</item>
-        <item>Nogi</item>
+        <item>Chest</item>
+        <item>Back</item>
+        <item>Shoulders</item>
+        <item>Legs</item>
         <item>Triceps</item>
         <item>Biceps</item>
-        <item>Brzuch</item>
+        <item>ABS</item>
     </array>
 
 </resources>

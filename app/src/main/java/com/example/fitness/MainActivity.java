@@ -15,15 +15,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void launchBaza(View v) {
-        Intent i = new Intent(this, bazaActivity.class);
+        Intent i = new Intent(this, BaseActivity.class);
         startActivity(i);
     }
     public void launchPlan(View v) {
-        Intent i = new Intent(this, planActivity.class);
+        Intent i = new Intent(this, WorkoutRoutineActivity.class);
         startActivity(i);
     }
     public void launchScenariusze(View v) {
-        Intent i = new Intent(this, scenariuszeActivity.class);
+        Intent i = new Intent(this, ReadyWorkoutsActivity.class);
         startActivity(i);
     }
 }
