@@ -25,7 +25,8 @@
         android:layout_marginBottom="17dp"
         android:backgroundTint="@color/colorAccent"
         android:gravity="center"
-        android:text="@string/add" />
+        android:text="@string/add"
+        android:onClick="launchDodaj" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"

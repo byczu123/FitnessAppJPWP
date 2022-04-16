@@ -48,14 +48,11 @@ public class bazaActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(bazaActivity.this));
 
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.fbAddEx);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_dodaj_cwiczenia);
-            }
-        });
+    }
 
+    public void launchDodaj(View v) {
+        Intent i = new Intent(this, dodajCwiczeniaActivity.class);
+        startActivity(i);
     }
 
 

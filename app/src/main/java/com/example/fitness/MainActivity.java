@@ -13,30 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        buttonBase.findViewById(R.id.bazaCwiczenId);
-        buttonAdd.findViewById(R.id.planId);
-        buttonRoutine.findViewById(R.id.scenariuszeId);
-
-        buttonBase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_baza);
-            }
-        });
-
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_dodaj_cwiczenia);
-            }
-        });
-
-        buttonRoutine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_plan);
-            }
-        });
+    }
+    public void launchBaza(View v) {
+        Intent i = new Intent(this, bazaActivity.class);
+        startActivity(i);
+    }
+    public void launchPlan(View v) {
+        Intent i = new Intent(this, planActivity.class);
+        startActivity(i);
+    }
+    public void launchScenariusze(View v) {
+        Intent i = new Intent(this, scenariuszeActivity.class);
+        startActivity(i);
     }
 }
+
