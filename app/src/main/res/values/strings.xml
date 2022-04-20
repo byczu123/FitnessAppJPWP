@@ -27,7 +27,7 @@
         <item>Lower Body Priority</item>
         <item>Fat burning</item>
     </array>
-    <array name="categories">
+    <string-array name="categories">
         <item>Chest</item>
         <item>Back</item>
         <item>Shoulders</item>
@@ -35,6 +35,23 @@
         <item>Triceps</item>
         <item>Biceps</item>
         <item>ABS</item>
-    </array>
+    </string-array>
+    <string-array name="sections">
+        <item >Chest</item>
+        <item >Back</item>
+        <item >Shoulders</item>
+        <item >Legs</item>
+        <item >Biceps</item>
+        <item >Triceps</item>
+        <item >ABS</item>
+    </string-array>
+    <string name="title_activity_example_acitvity">ExampleAcitvity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

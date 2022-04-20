@@ -3,6 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_abs.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_absactivity.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_add_exercises.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_back.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_base.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_biceps.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_calendar.xml" value="0.1421875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_chest.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_days.xml" value="0.1421875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_example.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_example_acitvity.xml" value="0.152" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_example_activiy.xml" value="0.25" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_klata.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_legs.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_main.xml" value="0.1421875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_plecy.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_ready_workouts.xml" value="0.1421875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_shoulders.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_show_ex.xml" value="0.1421875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_triceps.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/activity_workout_routine.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/content_example_acitvity.xml" value="0.2" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/fragment_first.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/fragment_second.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/layout/row.xml" value="0.176" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_baza.xml" value="0.264" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_dodaj_cwiczenia.xml" value="0.1" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_dodaj_cwiczenie.xml" value="0.2515625" />

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button buttonBase, buttonRoutine, buttonAdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +25,6 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, ReadyWorkoutsActivity.class);
         startActivity(i);
     }
+
 }
 
