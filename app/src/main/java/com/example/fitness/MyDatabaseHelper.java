@@ -9,12 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-public class MyDatabaseHelper extends SQLiteOpenHelper {
+class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String dbName = "Exercises.db";
     private static final int versionOfDB = 1;
     private static final String tableName = "Exercises";
+
 
     private static final String ExIdColumn = "_id";
     private static final String NameOfExColumn = "Nazwa";
@@ -70,5 +71,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    public void deleteRecord(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(dbName, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Nie udało się usunąć z bazy", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Usunięto z bazy", Toast.LENGTH_SHORT).show();
+        }
     }
 }

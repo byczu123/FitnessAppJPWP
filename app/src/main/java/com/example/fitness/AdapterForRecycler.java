@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -45,7 +46,7 @@ public class AdapterForRecycler extends RecyclerView.Adapter<AdapterForRecycler.
         holder.rowLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ShowEx.class);
+                Intent intent = new Intent(context, ShowExActivity.class);
                 intent.putExtra("passName", String.valueOf(array_name.get(holder.getAdapterPosition())));
                 intent.putExtra("passDescription", String.valueOf(array_description.get(holder.getAdapterPosition())));
                 context.startActivity(intent);
