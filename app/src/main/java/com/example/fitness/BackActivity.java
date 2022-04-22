@@ -45,15 +45,12 @@ public class BackActivity extends AppCompatActivity {
         adapter = new AdapterForRecycler(BackActivity.this, name, description, category, percent);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(BackActivity.this));
-        delete = findViewById(R.id.delete_new);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_abs);
-            }
-        });
+        delete = findViewById(R.id.deleteButton);
     }
 
+    public void test(View view){
+        confirmDialog();
+    }
 
     void storeInArrays(String injected) {
         Cursor cursor = myDB.injectData(injected);
