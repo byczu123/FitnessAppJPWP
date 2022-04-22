@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.Objects;
+
 public class AddExerciseActivity extends AppCompatActivity {
 
     EditText name_input, description_input, level_input;
@@ -32,7 +34,29 @@ public class AddExerciseActivity extends AppCompatActivity {
                         description_input.getText().toString().trim(),
                         category.getSelectedItem().toString().trim(),
                         Integer.valueOf(level_input.getText().toString().trim()));
-                BaseActivity.recyclerView.setAdapter(BaseActivity.adapter);
+                if(Objects.equals(category.getSelectedItem().toString().trim(), "Chest")){
+                    ChestActivity.recyclerView.setAdapter(ChestActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "Back")){
+                    BackActivity.recyclerView.setAdapter(BackActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "Shoulders")){
+                    ShouldersActivity.recyclerView.setAdapter(ShouldersActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "Legs")){
+                    LegsActivity.recyclerView.setAdapter(LegsActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "Triceps")){
+                    TricepsActivity.recyclerView.setAdapter(TricepsActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "Biceps")){
+                    BicepsActivity.recyclerView.setAdapter(BicepsActivity.adapter);
+                }
+                else if (Objects.equals(category.getSelectedItem().toString().trim(), "ABS")){
+                    ABSActivity.recyclerView.setAdapter(ABSActivity.adapter);
+                }
+
+
             }
         });
 

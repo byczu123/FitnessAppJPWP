@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
-    static RecyclerView recyclerView;
+    //static RecyclerView recyclerView;
     FloatingActionButton floatingActionButton;
     MyDatabaseHelper myDB;
     ArrayList<String> name, description, category;
@@ -41,37 +41,37 @@ public class BaseActivity extends AppCompatActivity implements AdapterView.OnIte
         switch ((int) id) {
             case 0:
                 intent.setClass(this, ChestActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Chest");
                 startActivity(intent);
                 break;
             case 1:
                 intent.setClass(this, BackActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Back");
                 startActivity(intent);
                 break;
             case 2:
                 intent.setClass(this, ShouldersActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Shoulders");
                 startActivity(intent);
                 break;
             case 3:
                 intent.setClass(this, LegsActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Legs");
                 startActivity(intent);
                 break;
             case 4:
                 intent.setClass(this, BicepsActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Biceps");
                 startActivity(intent);
                 break;
             case 5:
                 intent.setClass(this, TricepsActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "Triceps");
                 startActivity(intent);
                 break;
             case 6:
                 intent.setClass(this, ABSActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("category", "ABS");
                 startActivity(intent);
                 break;
             // Or / And

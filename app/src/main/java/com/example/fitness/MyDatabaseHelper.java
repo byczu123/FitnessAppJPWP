@@ -2,6 +2,7 @@ package com.example.fitness;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -60,8 +61,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    Cursor injectData(){
-        String query = "SELECT * FROM " + tableName;
+    Cursor injectData(String inject_category){
+        String query = "SELECT * FROM " + tableName + " WHERE " +
+                CategoryColumn + "=" + "\"" + inject_category + "\"";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if(db != null){
