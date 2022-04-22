@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ShowEx extends AppCompatActivity {
+public class ShowExActivity extends AppCompatActivity {
 
     TextView passedName, passedDescription;
 

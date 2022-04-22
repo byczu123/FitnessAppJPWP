@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness" >
         <activity
-            android:name=".ShowEx"
+            android:name=".ShowExActivity"
             android:exported="false" />
         <activity
             android:name=".AddExerciseActivity"
