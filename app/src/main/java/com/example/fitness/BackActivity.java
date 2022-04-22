@@ -65,7 +65,7 @@ public class BackActivity extends AppCompatActivity {
             }
         }
     }
-    public void confirmDialog() {
+    public void confirmDialog(String id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete this exercise?");
         builder.setMessage("Are you sure you want to delete this exercise?");
