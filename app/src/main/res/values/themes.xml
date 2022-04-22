@@ -1,8 +1,17 @@
-<resources>
-  <style name="Theme.Fitness.NoActionBar" >
-  <item name="windowActionBar">false</item>
-  <item name="windowNoTitle">true</item>
-</style>
-  <style name="Theme.Fitness.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-  <style name="Theme.Fitness.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Base application theme. -->
+  <style name="Theme.Fitness" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">@color/gray</item>
+    <item name="colorPrimaryVariant">@color/purple_500</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">@color/white</item>
+    <item name="colorSecondaryVariant">@color/white</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    <!-- Customize your theme here. -->
+    <item name="android:navigationBarColor">@color/white</item>
+  </style>
 </resources>

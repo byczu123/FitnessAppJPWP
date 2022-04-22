@@ -10,14 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness" >
         <activity
-            android:name=".ExampleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ExampleAcitvity"
-            android:exported="false"
-            android:label="@string/title_activity_example_acitvity"
-            android:theme="@style/Theme.Fitness.NoActionBar" />
-        <activity
             android:name=".ShowEx"
             android:exported="false" />
         <activity
@@ -29,7 +21,8 @@
             android:exported="false" />
         <activity
             android:name=".BaseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".WorkoutRoutineActivity"
             android:exported="false" />

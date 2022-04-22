@@ -17,7 +17,8 @@
     <string name="six">Six days</string>
     <string name="seven">Seven days</string>
     <string name="next">Next</string>
-    <string name="label">MyFitnessApp</string>
+    <string name="label">MFA</string>
+    <string name="hint">Pick category of the exercise below.</string>
     <array name="readyPlansArray">
         <item>Push-Pull</item>
         <item>FBW</item>

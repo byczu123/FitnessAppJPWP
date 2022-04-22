@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <Button
         android:id="@+id/fbAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,11 +19,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/colorAccent"
+        android:background="@drawable/custom_button"
         android:onClick="launchDays"
         android:text="@string/add"
         android:textAlignment="center"
-        android:textColor="#424242"
         tools:ignore="TextContrastCheck" />
 
 
