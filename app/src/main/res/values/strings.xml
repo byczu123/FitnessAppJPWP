@@ -19,15 +19,15 @@
     <string name="next">Next</string>
     <string name="label">MFA</string>
     <string name="hint">Pick category of the exercise below.</string>
-    <array name="readyPlansArray">
-        <item>Push-Pull</item>
-        <item>FBW</item>
-        <item>Split</item>
-        <item>Upper Lower</item>
-        <item>Upper Body Priority</item>
-        <item>Lower Body Priority</item>
-        <item>Fat burning</item>
-    </array>
+    <string-array name="Trainings">
+        <item>Training 1</item>
+        <item>Training 2</item>
+        <item>Training 3</item>
+        <item>Training 4</item>
+        <item>Training 5</item>
+        <item>Training 6</item>
+        <item>Training 7</item>
+    </string-array>
     <string-array name="categories">
         <item>Chest</item>
         <item>Back</item>

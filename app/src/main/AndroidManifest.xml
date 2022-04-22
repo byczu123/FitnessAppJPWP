@@ -27,6 +27,9 @@
             android:name=".WorkoutRoutineActivity"
             android:exported="false" />
         <activity
+            android:name=".DayActivity"
+            android:exported="false" />
+        <activity
             android:name=".DaysActivity"
             android:exported="false" />
         <activity
