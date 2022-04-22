@@ -1,5 +1,6 @@
 package com.example.fitness;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -14,35 +15,34 @@ import java.util.ArrayList;
 
 public class ABSActivity extends AppCompatActivity {
     static RecyclerView recyclerView;
-    FloatingActionButton floatingActionButton;
     MyDatabaseHelper myDB;
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abs);
-
-
+        Intent i = getIntent();
+        String cat = i.getStringExtra("category");
         recyclerView = findViewById(R.id.ABSrecycleView);
-
         myDB = new MyDatabaseHelper(ABSActivity.this);
         name = new ArrayList<>();
         description = new ArrayList<>();
         category = new ArrayList<>();
         percent = new ArrayList<>();
 
-        storeInArrays();
+        storeInArrays(cat);
 
         adapter = new AdapterForRecycler(ABSActivity.this, name, description, category, percent);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ABSActivity.this));
     }
 
-    void storeInArrays() {
-        Cursor cursor = myDB.injectData();
+    void storeInArrays(String injected) {
+        Cursor cursor = myDB.injectData(injected);
         if (cursor.getCount() == 0) {
             Toast.makeText(this, "Brak wyników", Toast.LENGTH_SHORT).show();
         } else {
