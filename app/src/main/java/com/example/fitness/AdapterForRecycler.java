@@ -39,7 +39,7 @@ public class AdapterForRecycler extends RecyclerView.Adapter<AdapterForRecycler.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.name_txt.setText(String.valueOf(array_name.get(position)));
         holder.category_txt.setText(String.valueOf(array_category.get(position)));
         holder.level_txt.setText(String.valueOf(array_level.get(position)));

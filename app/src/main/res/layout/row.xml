@@ -62,7 +62,6 @@
                 app:layout_constraintEnd_toStartOf="@+id/lvl"
                 app:layout_constraintTop_toTopOf="parent"
                 app:rippleColor="#ff424242"
-                android:onClick="test"
                 app:strokeColor="#ff424242"
                 tools:ignore="TextContrastCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>

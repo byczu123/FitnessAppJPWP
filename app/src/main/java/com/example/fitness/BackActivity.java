@@ -25,7 +25,8 @@ public class BackActivity extends AppCompatActivity {
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
-    Button delete;
+    Button deleteButton1;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +42,18 @@ public class BackActivity extends AppCompatActivity {
         category = new ArrayList<>();
         percent = new ArrayList<>();
 
+        id = getIntent().getStringExtra("passName");
+
         storeInArrays(cat);
         adapter = new AdapterForRecycler(BackActivity.this, name, description, category, percent);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(BackActivity.this));
-        delete = findViewById(R.id.deleteButton);
+        deleteButton1 = (Button)findViewById(R.id.delete_new);
+
 
     }
-    public void test(View view){
-        confirmDialog();
-    }
+
+
 
     void storeInArrays(String injected) {
         Cursor cursor = myDB.injectData(injected);
@@ -65,26 +68,8 @@ public class BackActivity extends AppCompatActivity {
             }
         }
     }
-    public void confirmDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete this exercise?");
-        builder.setMessage("Are you sure you want to delete this exercise?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                //MyDatabaseHelper myDB = new MyDatabaseHelper(BackActivity.this);
-                //myDB.deleteRecord(id);
-                finish();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
 
-            }
-        });
-        builder.create().show();
 
-    }
 }
+
 

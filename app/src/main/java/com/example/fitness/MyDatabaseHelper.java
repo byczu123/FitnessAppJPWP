@@ -74,12 +74,10 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void deleteRecord(String id){
+    public void deleteRecord(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
-
-        //long result = db.delete(dbName, "Nazwa=?", new String[]{row_id});
-        db.execSQL("DELETE FROM " + dbName + " WHERE Nazwa = " +  "\"" + id + "\"");
-        Toast.makeText(context, "Usunięto z bazy", Toast.LENGTH_SHORT).show();
+        db.execSQL("DELETE FROM " + dbName+ " WHERE "+NameOfExColumn+"="+ "\"" + row_id+"\"");
+        db.close();
 
     }
 }
