@@ -21,6 +21,8 @@ public class DaysActivity extends AppCompatActivity {
     RadioButton one,two,three,four,five,six,seven;
     Button button;
     String number;
+    public int n;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -39,18 +41,32 @@ public class DaysActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (one.isChecked()) {
                     number = one.getText().toString();
+                    n=1;
                 } else if (two.isChecked()) {
                     number = two.getText().toString();
+                    n=2;
                 } else if (three.isChecked()) {
                     number = three.getText().toString();
+                    n=3;
                 } else if (four.isChecked()) {
                     number = four.getText().toString();
+                    n=4;
                 } else if (five.isChecked()) {
                     number = five.getText().toString();
+                    n=5;
                 }
                 Toast.makeText(getApplicationContext(), number, Toast.LENGTH_LONG).show(); // print the value of selected super star
             }
         });
+        switch (n) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+        }
 
     }
 }

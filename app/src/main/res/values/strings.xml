@@ -19,7 +19,7 @@
     <string name="next">Next</string>
     <string name="label">MFA</string>
     <string name="hint">Pick category of the exercise below.</string>
-    <string-array name="Trainings">
+    <string-array name="Trainings7">
         <item>Training 1</item>
         <item>Training 2</item>
         <item>Training 3</item>
@@ -28,6 +28,37 @@
         <item>Training 6</item>
         <item>Training 7</item>
     </string-array>
+    <string-array name="Trainings6">
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+    </string-array>
+    <string-array name="Trainings5">
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+    </string-array>
+    <string-array name="Trainings4">
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+    </string-array>
+    <string-array name="Trainings3">
+        <item>Training 1</item>
+        <item>Training 1</item>
+        <item>Training 1</item>
+    </string-array>
+    <string-array name="Trainings2">
+        <item>Training 1</item>
+        <item>Training 1</item>
+    </string-array>
+
     <string-array name="categories">
         <item>Chest</item>
         <item>Back</item>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -25,7 +26,6 @@ public class BackActivity extends AppCompatActivity {
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
     Button delete;
-    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class BackActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(BackActivity.this));
         delete = findViewById(R.id.deleteButton);
-    }
 
+    }
     public void test(View view){
         confirmDialog();
     }
@@ -65,15 +65,15 @@ public class BackActivity extends AppCompatActivity {
             }
         }
     }
-    public void confirmDialog(String id) {
+    public void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete this exercise?");
         builder.setMessage("Are you sure you want to delete this exercise?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(BackActivity.this);
-                myDB.deleteRecord(id);
+                //MyDatabaseHelper myDB = new MyDatabaseHelper(BackActivity.this);
+                //myDB.deleteRecord(id);
                 finish();
             }
         });

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -73,11 +74,11 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void deleteRecord(String row_id){
+    public void deleteRecord(String id){
         SQLiteDatabase db = this.getWritableDatabase();
 
         //long result = db.delete(dbName, "Nazwa=?", new String[]{row_id});
-        db.execSQL("DELETE FROM " + dbName + " WHERE Nazwa = " +  "\"" + row_id + "\"");
+        db.execSQL("DELETE FROM " + dbName + " WHERE Nazwa = " +  "\"" + id + "\"");
         Toast.makeText(context, "Usunięto z bazy", Toast.LENGTH_SHORT).show();
 
     }
