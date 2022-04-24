@@ -14,7 +14,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String dbName = "Exercises.db";
-    private static final int versionOfDB = 1;
+    private static final int versionOfDB = 2;
     private static final String tableName = "Exercises";
 
 
@@ -31,21 +31,23 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + tableName + " (" +
-                ExIdColumn + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                NameOfExColumn + " TEXT, " + DescriptionColumn +
-                " TEXT, " + CategoryColumn + " TEXT, " +
-                PercentColumn + " INTEGER)";
-        db.execSQL(query);
-
-    }
-
-    @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + tableName);
         onCreate(db);
     }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String query = "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
+                ExIdColumn + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                NameOfExColumn + " TEXT, " + DescriptionColumn +
+                " TEXT, " + CategoryColumn + " TEXT, " +
+                PercentColumn + " INTEGER) ;";
+        db.execSQL(query);
+
+    }
+
+
 
     void addEx(String cv_name, String cv_description, String cv_category, int cv_level){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -60,6 +62,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context, "Dodano nowe ćwiczenie", Toast.LENGTH_SHORT).show();
         }
+        db.close();
 
     }
 
@@ -76,7 +79,10 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public void deleteRecord(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM " + dbName+ " WHERE "+NameOfExColumn+"="+ "\"" + row_id+"\"");
+        //db.delete(dbName, "Nazwa=?", new String[]{row_id});
+        db.execSQL("DELETE FROM " + tableName+ " WHERE "+NameOfExColumn+"="+ "\"" + row_id+"\"");
+        Toast.makeText(context, "Usunięto ćwiczenie", Toast.LENGTH_SHORT).show();
+
         db.close();
 
     }

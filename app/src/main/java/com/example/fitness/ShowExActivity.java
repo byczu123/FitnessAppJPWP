@@ -16,6 +16,7 @@ public class ShowExActivity extends AppCompatActivity {
     TextView passedName, passedDescription;
     Button deleteButton1;
     String id;
+    MyDatabaseHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class ShowExActivity extends AppCompatActivity {
         id = getIntent().getStringExtra("passName");
 
         deleteButton1 = findViewById(R.id.delete_new);
+        myDB = new MyDatabaseHelper(this);
+
 
         deleteButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +54,6 @@ public class ShowExActivity extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(ShowExActivity.this);
                 myDB.deleteRecord(id);
                 finish();
             }
