@@ -25,6 +25,7 @@ public class BaseActivity extends AppCompatActivity implements AdapterView.OnIte
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
+    static int option;
 
 
     @Override
@@ -38,7 +39,8 @@ public class BaseActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         Intent intent = new Intent();
-        switch ((int) id) {
+        option = (int) id;
+        switch (option) {
             case 0:
                 intent.setClass(this, ChestActivity.class);
                 intent.putExtra("category", "Chest");
@@ -75,6 +77,7 @@ public class BaseActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             // Or / And
+
         }
     }
 

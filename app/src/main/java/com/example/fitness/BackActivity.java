@@ -36,7 +36,7 @@ public class BackActivity extends AppCompatActivity {
         Intent i = getIntent();
         String cat = i.getStringExtra("category");
         recyclerView = findViewById(R.id.BackrecycleView);
-        myDB = new MyDatabaseHelper(BackActivity.this);
+        myDB = new MyDatabaseHelper(this);
         name = new ArrayList<>();
         description = new ArrayList<>();
         category = new ArrayList<>();
