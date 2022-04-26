@@ -17,27 +17,74 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class BaseActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class BaseActivity extends AppCompatActivity{
 
-    //static RecyclerView recyclerView;
-    FloatingActionButton floatingActionButton;
     MyDatabaseHelper myDB;
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
+    ListView listView;
 
-
+    String[] maintitle ={
+            "Chest","Back","Shoulders",
+            "Triceps","Biceps",
+            "Legs","ABS"
+    };
+    Integer[] imgid={
+            R.drawable.chest,R.drawable.back,
+            R.drawable.shoulder,R.drawable.triceps,
+            R.drawable.back, R.drawable.leg,R.drawable.chest
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        ListView listview = findViewById(R.id.listView1);
-        listview.setOnItemClickListener(this);
+
+        MyListAdapter adapter= new MyListAdapter(this, maintitle, imgid);
+
+        listView = (ListView)findViewById(R.id.listView1);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent();
+                if(position == 0) {
+                    intent.setClass(BaseActivity.this, ChestActivity.class);
+                    intent.putExtra("category", "Chest");
+                    startActivity(intent);
+                }
+                if(position == 1) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_back);
+                }
+                if(position == 2) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_shoulders);
+                }
+                if(position == 3) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_biceps);
+                }
+                if(position == 4) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_triceps);
+                }
+                if(position == 5) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_legs);
+                }
+                if(position == 6) {
+                    //code specific to first list item
+                    setContentView(R.layout.activity_abs);
+                }
+            }
+        });
 
     }
 
-    public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+        /*public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         Intent intent = new Intent();
         switch ((int) id) {
             case 0:

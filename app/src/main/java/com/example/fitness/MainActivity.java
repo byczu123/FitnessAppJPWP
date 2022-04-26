@@ -1,5 +1,6 @@
 package com.example.fitness;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         b1 = findViewById(R.id.bazaCwiczenId);
         b2 = findViewById(R.id.scenariuszeId);
         b3 = findViewById(R.id.planId);
+
     }
 
     public void launchBaza(View v) {

@@ -6,12 +6,12 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/label"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness" >
         <activity
             android:name=".ShowExActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".AddExerciseActivity"
             android:exported="false"
@@ -34,25 +34,32 @@
             android:exported="false" />
         <activity
             android:name=".ChestActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".BackActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".TricepsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".BicepsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".ShouldersActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".LegsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BaseActivity"/>
         <activity
             android:name=".ABSActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BicepsActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" >

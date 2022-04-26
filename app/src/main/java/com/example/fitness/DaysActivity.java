@@ -42,6 +42,8 @@ public class DaysActivity extends AppCompatActivity {
                 if (one.isChecked()) {
                     number = one.getText().toString();
                     n=1;
+                    Intent intent = new Intent(DaysActivity.this, BaseActivity.class);
+                    startActivity(intent);
                 } else if (two.isChecked()) {
                     number = two.getText().toString();
                     n=2;
