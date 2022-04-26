@@ -56,107 +56,47 @@ public class BaseActivity extends AppCompatActivity{
                     startActivity(intent);
                 }
                 if(position == 1) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_back);
+                    intent.setClass(BaseActivity.this, BackActivity.class);
+                    intent.putExtra("category", "Back");
+                    startActivity(intent);
+
                 }
                 if(position == 2) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_shoulders);
+                    intent.setClass(BaseActivity.this, ShouldersActivity.class);
+                    intent.putExtra("category", "Shoulders");
+                    startActivity(intent);
+
                 }
                 if(position == 3) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_biceps);
+                    intent.setClass(BaseActivity.this, BicepsActivity.class);
+                    intent.putExtra("category", "Biceps");
+                    startActivity(intent);
+
                 }
                 if(position == 4) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_triceps);
+                    intent.setClass(BaseActivity.this, TricepsActivity.class);
+                    intent.putExtra("category", "Triceps");
+                    startActivity(intent);
+
                 }
                 if(position == 5) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_legs);
+                    intent.setClass(BaseActivity.this, LegsActivity.class);
+                    intent.putExtra("category", "Legs");
+                    startActivity(intent);
+
                 }
                 if(position == 6) {
-                    //code specific to first list item
-                    setContentView(R.layout.activity_abs);
+                    intent.setClass(BaseActivity.this, ABSActivity.class);
+                    intent.putExtra("category", "ABS");
+                    startActivity(intent);
+
                 }
             }
         });
 
     }
 
-        /*public void onItemClick(AdapterView<?> l, View v, int position, long id) {
-        Intent intent = new Intent();
-        switch ((int) id) {
-            case 0:
-                intent.setClass(this, ChestActivity.class);
-                intent.putExtra("category", "Chest");
-                startActivity(intent);
-                break;
-            case 1:
-                intent.setClass(this, BackActivity.class);
-                intent.putExtra("category", "Back");
-                startActivity(intent);
-                break;
-            case 2:
-                intent.setClass(this, ShouldersActivity.class);
-                intent.putExtra("category", "Shoulders");
-                startActivity(intent);
-                break;
-            case 3:
-                intent.setClass(this, LegsActivity.class);
-                intent.putExtra("category", "Legs");
-                startActivity(intent);
-                break;
-            case 4:
-                intent.setClass(this, BicepsActivity.class);
-                intent.putExtra("category", "Biceps");
-                startActivity(intent);
-                break;
-            case 5:
-                intent.setClass(this, TricepsActivity.class);
-                intent.putExtra("category", "Triceps");
-                startActivity(intent);
-                break;
-            case 6:
-                intent.setClass(this, ABSActivity.class);
-                intent.putExtra("category", "ABS");
-                startActivity(intent);
-                break;
-            // Or / And
 
-        }
-    }
-
-       /* recyclerView = findViewById(R.id.recycleView);
-       // floatingButton = findViewById(R.id.fbAddEx);*/
-
-        /*myDB = new MyDatabaseHelper (BaseActivity.this);
-        name = new ArrayList<>();
-        description = new ArrayList<>();
-        category = new ArrayList<>();
-        percent = new ArrayList<>();
-
-        storeInArrays();
-
-        adapter = new AdapterForRecycler(BaseActivity.this, name, description, category, percent);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(BaseActivity.this));*/
-
-
-
-   /* void storeInArrays(){
-        Cursor cursor = myDB.injectData();
-        if(cursor.getCount() == 0){
-            Toast.makeText(this, "Brak wyników", Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
-                name.add(cursor.getString(1));
-                description.add(cursor.getString(2));
-                category.add(cursor.getString(3));
-                percent.add(cursor.getInt(4));
-            }
-        }
-    }*/
     public void launchDodaj (View v){
         Intent i = new Intent(this, AddExerciseActivity.class);
         startActivity(i);
