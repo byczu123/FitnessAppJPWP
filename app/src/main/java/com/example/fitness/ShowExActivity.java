@@ -76,6 +76,7 @@ public class ShowExActivity extends AppCompatActivity {
     public void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         Intent intent = new Intent(this, BaseActivity.class);
+
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         builder.setTitle("Delete this exercise?");
         builder.setMessage("Are you sure you want to delete this exercise?");
