@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ShowScenarioActivity extends AppCompatActivity {
 
-    TextView passedName, passedDescription, listOfExercises, calories;
+    TextView passedName, passedDescription, listOfExercises, calories, timeOfTraining;
     static MyDatabaseHelper myDB;
     Button add;
 
@@ -42,6 +42,7 @@ public class ShowScenarioActivity extends AppCompatActivity {
         myDB = new MyDatabaseHelper(ShowScenarioActivity.this);
         String exercises = "";
         int number = 0;
+        int time = 0;
 
 
 
@@ -51,12 +52,19 @@ public class ShowScenarioActivity extends AppCompatActivity {
         passedDescription.setText(passedD);
         listOfExercises = findViewById(R.id.xmlExercises);
         calories = findViewById(R.id.xmlCalories);
+        timeOfTraining = findViewById(R.id.xmlTime);
         workouts = myDB.getData(passedN);
        for(int j=0; j<workouts.size(); j++){
-           exercises+= workouts.get(j).workOutName + "; ";
+           exercises+= workouts.get(j).workOutName + ": [" + workouts.get(j).reps + " reps] [" +
+                   workouts.get(j).series + " series]; ";
+           number+= workouts.get(j).level / 50 * workouts.get(j).reps * workouts.get(j).series;
+           time+=workouts.get(j).reps * workouts.get(j).series  /7;
        }
+
         listOfExercises.setText(exercises);
-        //calories.setText(number);
+        calories.setText(String.valueOf(number));
+        timeOfTraining.setText(String.valueOf(time));
+
 
 
 
