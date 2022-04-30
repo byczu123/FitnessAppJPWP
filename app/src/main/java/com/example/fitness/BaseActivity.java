@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class BaseActivity extends AppCompatActivity{
 
@@ -40,6 +41,10 @@ public class BaseActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+        String test = getIntent().getStringExtra("vis");
+        String passName = getIntent().getStringExtra("scenName");
+        String passDescr = getIntent().getStringExtra("scenDescr");
+
 
         MyListAdapter adapter= new MyListAdapter(this, maintitle, imgid);
 
@@ -50,44 +55,81 @@ public class BaseActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent();
+
                 if(position == 0) {
                     intent.setClass(BaseActivity.this, ChestActivity.class);
                     intent.putExtra("category", "Chest");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
+
                     startActivity(intent);
                 }
                 if(position == 1) {
                     intent.setClass(BaseActivity.this, BackActivity.class);
                     intent.putExtra("category", "Back");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }
                 if(position == 2) {
                     intent.setClass(BaseActivity.this, ShouldersActivity.class);
                     intent.putExtra("category", "Shoulders");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }
                 if(position == 3) {
                     intent.setClass(BaseActivity.this, BicepsActivity.class);
                     intent.putExtra("category", "Biceps");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }
                 if(position == 4) {
                     intent.setClass(BaseActivity.this, TricepsActivity.class);
                     intent.putExtra("category", "Triceps");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }
                 if(position == 5) {
                     intent.setClass(BaseActivity.this, LegsActivity.class);
                     intent.putExtra("category", "Legs");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }
                 if(position == 6) {
                     intent.setClass(BaseActivity.this, ABSActivity.class);
                     intent.putExtra("category", "ABS");
+                    intent.putExtra("passName", passName);
+                    intent.putExtra("passDescription", passDescr);
+                    if(Objects.equals(test, "yes")){
+                        intent.putExtra("pass", "yup");
+                    }
                     startActivity(intent);
 
                 }

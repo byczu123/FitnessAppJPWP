@@ -35,7 +35,7 @@ public class AddExerciseActivity extends AppCompatActivity {
                         description_input.getText().toString().trim(),
                         category.getSelectedItem().toString().trim(),
                         Integer.valueOf(level_input.getText().toString().trim()));
-               
+
 
                 }
         });

@@ -10,12 +10,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+
 class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String dbName = "Exercises.db";
-    private static final int versionOfDB = 2;
+    private static final int versionOfDB = 5;
     private static final String tableName = "Exercises";
+    private static final String table1Name = "Scenarios";
 
 
     private static final String ExIdColumn = "_id";
@@ -23,6 +28,16 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String DescriptionColumn = "Opis";
     private static final String CategoryColumn = "Kategoria";
     private static final String PercentColumn = "Poziom_trudności";
+    private static final String NameofScenario = "Nazwa_scenariuszu";
+    private static final String NameofExInScenario = "Nazwa_cwiczenia_w_scenariuszu";
+    private static final String DescOfScenario = "Opis_scenariusza";
+    private static final String Reps = "Powtórzenia";
+    private static final String Series = "Serie";
+    ArrayList<Workout> workout = new ArrayList<>();
+
+
+
+
 
 
     public MyDatabaseHelper(@Nullable Context context ) {
@@ -30,11 +45,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         this.context=context;
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS " + tableName);
-        onCreate(db);
-    }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -43,8 +54,20 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
                 NameOfExColumn + " TEXT, " + DescriptionColumn +
                 " TEXT, " + CategoryColumn + " TEXT, " +
                 PercentColumn + " INTEGER) ;";
+        String query1 = "CREATE TABLE " + table1Name + " (" +
+                NameofScenario + " TEXT, " + DescOfScenario +
+                " TEXT, " + NameofExInScenario + " TEXT, " + Reps + " INTEGER, " +
+                Series + " INTEGER) ;";
         db.execSQL(query);
+        db.execSQL(query1);
 
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + tableName);
+        db.execSQL("DROP TABLE IF EXISTS " + table1Name);
+        onCreate(db);
     }
 
 
@@ -86,4 +109,70 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
     }
+
+    void addScenario(String name, String descr, String exercise, int reps, int series){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(NameofScenario, name);
+        cv.put(DescOfScenario, descr);
+        cv.put(NameofExInScenario, exercise);
+        cv.put(Reps, reps);
+        cv.put(Series, series);
+
+        long result = db.insert(table1Name, null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Nie udało się dodać scenariusza", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Dodano nowy scenariusz", Toast.LENGTH_SHORT).show();
+        }
+        db.close();
+    }
+
+    Cursor injectDataScenarios(){
+        String query = "SELECT Scenarios.Nazwa_scenariuszu, " +
+                "Scenarios.Opis_scenariusza" +
+                " FROM " + table1Name + " WHERE Scenarios.Serie = 0 ";
+        //+ ", " + tableName +
+          //      " WHERE Exercises.Nazwa = Scenarios.Nazwa_cwiczenia_w_scenariuszu" ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public ArrayList<Workout> getData(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT Exercises.Nazwa, Exercises.Poziom_trudności, Scenarios.Powtórzenia, " +
+                "Scenarios.Serie "
+                + " FROM " +
+                tableName + ", " + table1Name + " WHERE Scenarios.Nazwa_scenariuszu = " +
+                "\"" + name + "\"" + " AND Exercises.Nazwa = Scenarios.Nazwa_cwiczenia_w_scenariuszu";
+        Cursor cursor = db.rawQuery(query, null);
+        while(cursor.moveToNext()){
+            Workout ex = new Workout(cursor.getString(0), cursor.getInt(1),
+                    cursor.getInt(2), cursor.getInt(3));
+            workout.add(ex);
+        }
+        return workout;
+    }
+
+    /*
+    Cursor injectToList(){
+        String query = "SELECT Exercises.Nazwa, Exercises.Poziom_trudności, Scenarios.Reps, Scenarios.Series "
+                + " FROM " +
+                tableName + ", " + table1Name ;
+                //+ " WHERE Exercises.Nazwa = Scenarios.Nazwa_cwiczenia_w_scenariuszu";
+        //+ ", " + tableName +
+        //      " WHERE Exercises.Nazwa = Scenarios.Nazwa_cwiczenia_w_scenariuszu" ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+    */
+
 }

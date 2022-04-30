@@ -36,7 +36,7 @@ public class ABSActivity extends AppCompatActivity {
 
         storeInArrays(cat);
 
-        adapter = new AdapterForRecycler(ABSActivity.this, name, description, category, percent);
+        adapter = new AdapterForRecycler(ABSActivity.this, name, description, category, percent, getIntent());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ABSActivity.this));
     }

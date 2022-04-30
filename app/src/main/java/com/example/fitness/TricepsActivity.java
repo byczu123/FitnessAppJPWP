@@ -32,7 +32,7 @@ public class TricepsActivity extends AppCompatActivity {
         percent = new ArrayList<>();
 
         storeInArrays(cat);
-        adapter = new AdapterForRecycler(TricepsActivity.this, name, description, category, percent);
+        adapter = new AdapterForRecycler(TricepsActivity.this, name, description, category, percent, getIntent());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(TricepsActivity.this));
     }
