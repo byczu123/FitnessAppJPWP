@@ -104,8 +104,8 @@ public class ShowExActivity extends AppCompatActivity {
         saveButton = (Button) popupView.findViewById(R.id.buttonSave);
         cancelButton = (Button) popupView.findViewById(R.id.buttonCancel);
 
-        int reps = (int)Integer.parseInt(nrOfReps.getText().toString());
-        int series = (int)Integer.parseInt(nrOfSeries.getText().toString());
+        //int repsPop = (int)Integer.parseInt(nrOfReps.getText().toString());
+        //int seriesPop= (int)Integer.parseInt(nrOfSeries.getText().toString());
 
         builder.setView(popupView);
         dialog = builder.create();
@@ -114,7 +114,9 @@ public class ShowExActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addExercise(name, description, exercise, reps, series);
+                int repsPop = (int)Integer.parseInt(nrOfReps.getText().toString());
+                int seriesPop= (int)Integer.parseInt(nrOfSeries.getText().toString());
+                addExercise(name, description, exercise, repsPop, seriesPop);
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -125,8 +127,8 @@ public class ShowExActivity extends AppCompatActivity {
         });
     }
 
-    public void addExercise(String name, String Description, String exercise, int reps, int series){
-        myDB.addScenario(name, Description, exercise, reps, series);
+    public void addExercise(String name1, String Description1, String exercise1, int reps, int series){
+        myDB.addScenario(name1, Description1, exercise1, reps, series);
     }
 
 
