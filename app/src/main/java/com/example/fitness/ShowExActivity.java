@@ -11,21 +11,40 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class ShowExActivity extends AppCompatActivity {
 
     TextView passedName, passedDescription;
-    Button deleteButton1;
+    Button deleteButton1, add;
     String id;
     MyDatabaseHelper myDB;
+    private EditText nrOfReps, nrOfSeries;
+    private Button saveButton, cancelButton;
+    private AlertDialog.Builder builder;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ex);
+        add = findViewById(R.id.buttonAdd);
         Intent i = getIntent();
         String name11 = i.getStringExtra("passName");
         Intent intent = getIntent();
         String name112 = intent.getStringExtra("passDescription");
+        Intent in = getIntent();
+        String test = in.getStringExtra("give");
+        String test1 = in.getStringExtra("passN");
+        String test2 = in.getStringExtra("passD");
+
+        if(Objects.equals(test, "go")){
+            add.setVisibility(View.VISIBLE);
+        }else{
+            add.setVisibility(View.INVISIBLE);
+        }
+
+
 
         passedName = findViewById(R.id.name1);
         passedDescription = findViewById(R.id.description1);
@@ -39,6 +58,7 @@ public class ShowExActivity extends AppCompatActivity {
         myDB = new MyDatabaseHelper(this);
 
 
+
         deleteButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +66,12 @@ public class ShowExActivity extends AppCompatActivity {
             }
         });
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                repsPopup(test1, test2, name11);
+            }
+        });
     }
     public void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -69,4 +95,39 @@ public class ShowExActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
+
+    public void repsPopup(String name, String description, String exercise){
+        builder = new AlertDialog.Builder(this);
+        final View popupView = getLayoutInflater().inflate(R.layout.reps_popup, null);
+        nrOfReps = popupView.findViewById(R.id.reps);
+        nrOfSeries =  popupView.findViewById(R.id.series);
+        saveButton = (Button) popupView.findViewById(R.id.buttonSave);
+        cancelButton = (Button) popupView.findViewById(R.id.buttonCancel);
+
+        int reps = (int)Integer.parseInt(nrOfReps.getText().toString());
+        int series = (int)Integer.parseInt(nrOfSeries.getText().toString());
+
+        builder.setView(popupView);
+        dialog = builder.create();
+        dialog.show();
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addExercise(name, description, exercise, reps, series);
+            }
+        });
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
+
+    public void addExercise(String name, String Description, String exercise, int reps, int series){
+        myDB.addScenario(name, Description, exercise, reps, series);
+    }
+
+
 }

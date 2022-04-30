@@ -13,20 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AdapterForRecycler extends RecyclerView.Adapter<AdapterForRecycler.MyViewHolder> {
 
     private Context context;
     private ArrayList array_name, array_description, array_category, array_level;
     int position;
+    Intent i;
 
 
-    AdapterForRecycler(Context context, ArrayList array_name, ArrayList array_description, ArrayList array_category, ArrayList array_level){
+    AdapterForRecycler(Context context, ArrayList array_name, ArrayList array_description, ArrayList array_category, ArrayList array_level, Intent i){
         this.context = context;
         this.array_name = array_name;
         this.array_description = array_description;
         this.array_category = array_category;
         this.array_level = array_level;
+        this.i = i;
 
     }
 
@@ -48,7 +51,16 @@ public class AdapterForRecycler extends RecyclerView.Adapter<AdapterForRecycler.
             public void onClick(View view) {
                 Intent intent = new Intent(context, ShowExActivity.class);
                 intent.putExtra("passName", String.valueOf(array_name.get(holder.getAdapterPosition())));
+                String aaa = i.getStringExtra("pass");
+                String bbb = i.getStringExtra("passName");
+                String ccc = i.getStringExtra("passDescription");
+                intent.putExtra("passN", bbb);
+                intent.putExtra("passD", ccc);
                 intent.putExtra("passDescription", String.valueOf(array_description.get(holder.getAdapterPosition())));
+                if(Objects.equals(aaa, "yup")){
+                    intent.putExtra("give", "go");
+                }
+
                 context.startActivity(intent);
             }
         });

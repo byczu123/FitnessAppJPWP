@@ -69,13 +69,13 @@
         <item>ABS</item>
     </string-array>
     <string-array name="sections">
-        <item >Chest</item>
-        <item >Back</item>
-        <item >Shoulders</item>
-        <item >Legs</item>
-        <item >Biceps</item>
-        <item >Triceps</item>
-        <item >ABS</item>
+        <item>Chest</item>
+        <item>Back</item>
+        <item>Shoulders</item>
+        <item>Legs</item>
+        <item>Biceps</item>
+        <item>Triceps</item>
+        <item>ABS</item>
     </string-array>
     <string name="title_activity_example_acitvity">ExampleAcitvity</string>
     <!-- Strings used for fragments for navigation -->

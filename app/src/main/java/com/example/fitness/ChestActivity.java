@@ -3,6 +3,7 @@ package com.example.fitness;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ChestActivity extends AppCompatActivity {
 
@@ -21,12 +23,16 @@ public class ChestActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chest);
+
+
         Intent i = getIntent();
         String cat = i.getStringExtra("category");
+        String testt = i.getStringExtra("pass");
         recyclerView = findViewById(R.id.ChestrecycleView);
         myDB = new MyDatabaseHelper(ChestActivity.this);
         name = new ArrayList<>();
@@ -36,7 +42,7 @@ public class ChestActivity extends AppCompatActivity {
 
 
         storeInArrays(cat);
-        adapter = new AdapterForRecycler(ChestActivity.this, name, description, category, percent);
+        adapter = new AdapterForRecycler(ChestActivity.this, name, description, category, percent, getIntent());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ChestActivity.this));
     }
