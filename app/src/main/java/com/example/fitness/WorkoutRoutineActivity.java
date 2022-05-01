@@ -71,6 +71,7 @@ public class WorkoutRoutineActivity extends AppCompatActivity {
         builder.setView(popupView);
         dialog = builder.create();
         dialog.show();
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -19,6 +19,9 @@
     <string name="next">Next</string>
     <string name="label">MFA</string>
     <string name="hint">Pick category of the exercise below.</string>
+    <string name="calendar">Calendar</string>
+    <string name="pick">Pick</string>
+    <string name="cancel">Cancel</string>
     <string-array name="Trainings7">
         <item>Training 1</item>
         <item>Training 2</item>

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fitness">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:hardwareAccelerated="true"
         android:allowBackup="true"
@@ -15,7 +16,7 @@
         <activity
             android:name=".ShowExActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".ShowScenarioActivity" />
         <activity
             android:name=".AddExerciseActivity"
             android:exported="false"

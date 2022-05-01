@@ -1,5 +1,6 @@
 package com.example.fitness;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +20,9 @@ public class ShowScenarioActivity extends AppCompatActivity {
 
     TextView passedName, passedDescription, listOfExercises, calories, timeOfTraining;
     static MyDatabaseHelper myDB;
-    Button add;
+    Button add, saveBtn, cancelBtn;
+    AlertDialog dialog;
+    AlertDialog.Builder builder;
 
     ArrayList<String> exercises;
     ArrayList<Integer> lvl,reps, series;
@@ -45,7 +49,6 @@ public class ShowScenarioActivity extends AppCompatActivity {
         int time = 0;
 
 
-
         passedName = findViewById(R.id.xmlName);
         passedDescription = findViewById(R.id.xmlDesc);
         passedName.setText(passedN);
@@ -54,19 +57,16 @@ public class ShowScenarioActivity extends AppCompatActivity {
         calories = findViewById(R.id.xmlCalories);
         timeOfTraining = findViewById(R.id.xmlTime);
         workouts = myDB.getData(passedN);
-       for(int j=0; j<workouts.size(); j++){
-           exercises+= workouts.get(j).workOutName + ": [" + workouts.get(j).reps + " reps] [" +
-                   workouts.get(j).series + " series]; ";
-           number+= workouts.get(j).level / 50 * workouts.get(j).reps * workouts.get(j).series;
-           time+=workouts.get(j).reps * workouts.get(j).series  /7;
-       }
+        for (int j = 0; j < workouts.size(); j++) {
+            exercises += workouts.get(j).workOutName + ": [" + workouts.get(j).reps + " reps] [" +
+                    workouts.get(j).series + " series] \n ";
+            number += workouts.get(j).level / 50 * workouts.get(j).reps * workouts.get(j).series;
+            time += workouts.get(j).reps * workouts.get(j).series / 7;
+        }
 
         listOfExercises.setText(exercises);
         calories.setText(String.valueOf(number));
         timeOfTraining.setText(String.valueOf(time));
-
-
-
 
 
         add = findViewById(R.id.addEx);
@@ -83,7 +83,28 @@ public class ShowScenarioActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void calendar(View view) {
+        builder = new AlertDialog.Builder(this);
+        final View popupView = getLayoutInflater().inflate(R.layout.popup_calendar, null);
+        saveBtn = (Button) popupView.findViewById(R.id.saveBtn);
+        cancelBtn = (Button) popupView.findViewById(R.id.dismissBtn);
 
+        builder.setView(popupView);
+        dialog = builder.create();
+        dialog.show();
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
 

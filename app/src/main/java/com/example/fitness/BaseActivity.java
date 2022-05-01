@@ -34,7 +34,7 @@ public class BaseActivity extends AppCompatActivity{
     Integer[] imgid={
             R.drawable.chest,R.drawable.back,
             R.drawable.shoulder,R.drawable.triceps,
-            R.drawable.back, R.drawable.leg,R.drawable.chest
+            R.drawable.biceps, R.drawable.leg,R.drawable.abs
     };
 
     @Override
