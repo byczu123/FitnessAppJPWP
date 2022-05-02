@@ -1,11 +1,13 @@
-package com.example.fitness;
+package com.example.fitness.calendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
-public class ReadyWorkoutsActivity extends AppCompatActivity {
+import com.example.fitness.R;
+
+public class CalendarActivity extends AppCompatActivity {
     private ListView PlanBase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

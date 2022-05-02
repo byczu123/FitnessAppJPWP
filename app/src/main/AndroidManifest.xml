@@ -11,25 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness">
         <activity
-            android:name=".ShowScenarioActivity"
+            android:name=".scenario.ShowScenarioActivity"
             android:exported="false" />
         <activity
-            android:name=".ShowExActivity"
+            android:name=".base.ShowExActivity"
             android:exported="false"
-            android:parentActivityName=".ShowScenarioActivity" />
+            android:parentActivityName=".scenario.ShowScenarioActivity" />
         <activity
-            android:name=".AddExerciseActivity"
+            android:name=".base.AddExerciseActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".ReadyWorkoutsActivity"
+            android:name=".calendar.CalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".base.BaseActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".main.MainActivity" />
         <activity
-            android:name=".WorkoutRoutineActivity"
+            android:name=".scenario.WorkoutRoutineActivity"
             android:exported="false" />
         <activity
             android:name=".DayActivity"
@@ -38,35 +38,35 @@
             android:name=".DaysActivity"
             android:exported="false" />
         <activity
-            android:name=".ChestActivity"
+            android:name=".base.ChestActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".BackActivity"
+            android:name=".base.BackActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".TricepsActivity"
+            android:name=".base.TricepsActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".BicepsActivity"
+            android:name=".base.BicepsActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".ShouldersActivity"
+            android:name=".base.ShouldersActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".LegsActivity"
+            android:name=".base.LegsActivity"
             android:exported="false"
-            android:parentActivityName=".BaseActivity" />
+            android:parentActivityName=".base.BaseActivity" />
         <activity
-            android:name=".ABSActivity"
+            android:name=".base.ABSActivity"
             android:exported="false"
-            android:parentActivityName=".BicepsActivity" />
+            android:parentActivityName=".base.BicepsActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.base;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.fitness.db.MyDatabaseHelper;
+import com.example.fitness.R;
 
 import java.util.Objects;
 

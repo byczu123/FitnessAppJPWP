@@ -1,15 +1,15 @@
-package com.example.fitness;
+package com.example.fitness.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.util.Objects;
+import com.example.fitness.db.MyDatabaseHelper;
+import com.example.fitness.R;
 
 public class AddExerciseActivity extends AppCompatActivity {
 

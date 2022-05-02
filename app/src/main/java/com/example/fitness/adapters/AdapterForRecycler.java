@@ -1,16 +1,18 @@
-package com.example.fitness;
+package com.example.fitness.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.fitness.R;
+import com.example.fitness.base.ShowExActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -23,7 +25,7 @@ public class AdapterForRecycler extends RecyclerView.Adapter<AdapterForRecycler.
     Intent i;
 
 
-    AdapterForRecycler(Context context, ArrayList array_name, ArrayList array_description, ArrayList array_category, ArrayList array_level, Intent i){
+    public AdapterForRecycler(Context context, ArrayList array_name, ArrayList array_description, ArrayList array_category, ArrayList array_level, Intent i){
         this.context = context;
         this.array_name = array_name;
         this.array_description = array_description;

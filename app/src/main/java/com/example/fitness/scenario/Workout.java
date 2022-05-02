@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.scenario;
 
 public class Workout {
     String workOutName;

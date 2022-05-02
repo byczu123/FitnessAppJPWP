@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.adapters;
 
 import android.app.Activity;
 
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.fitness.R;
 
 public class MyListAdapter extends ArrayAdapter<String> {
 

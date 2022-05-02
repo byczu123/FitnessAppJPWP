@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,14 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitness.R;
+import com.example.fitness.scenario.ShowScenarioActivity;
+
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class ScenariosAdapter extends RecyclerView.Adapter<ScenariosAdapter.MyViewHolder> {
     private Context context;
     private ArrayList nameOfScenario, descOfScenario;
 
-    ScenariosAdapter(Context context, ArrayList nameOfScenario, ArrayList descOfScenario){
+    public ScenariosAdapter(Context context, ArrayList nameOfScenario, ArrayList descOfScenario){
         this.context = context;
         this.nameOfScenario = nameOfScenario;
         this.descOfScenario = descOfScenario;

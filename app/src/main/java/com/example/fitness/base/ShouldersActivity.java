@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.base;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -8,6 +8,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.fitness.adapters.AdapterForRecycler;
+import com.example.fitness.db.MyDatabaseHelper;
+import com.example.fitness.R;
 
 import java.util.ArrayList;
 

@@ -1,20 +1,19 @@
-package com.example.fitness;
+package com.example.fitness.db;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.fitness.scenario.Workout;
 
-class MyDatabaseHelper extends SQLiteOpenHelper {
+import java.util.ArrayList;
+
+public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String dbName = "Exercises.db";
@@ -72,7 +71,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    void addEx(String cv_name, String cv_description, String cv_category, int cv_level){
+    public void addEx(String cv_name, String cv_description, String cv_category, int cv_level){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(NameOfExColumn, cv_name);
@@ -89,7 +88,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    Cursor injectData(String inject_category){
+    public Cursor injectData(String inject_category){
         String query = "SELECT * FROM " + tableName + " WHERE " +
                 CategoryColumn + "=" + "\"" + inject_category + "\"";
         SQLiteDatabase db = this.getReadableDatabase();
@@ -110,7 +109,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    void addScenario(String name, String descr, String exercise, int reps, int series){
+    public void addScenario(String name, String descr, String exercise, int reps, int series){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(NameofScenario, name);
@@ -128,7 +127,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    Cursor injectDataScenarios(){
+    public Cursor injectDataScenarios(){
         String query = "SELECT Scenarios.Nazwa_scenariuszu, " +
                 "Scenarios.Opis_scenariusza" +
                 " FROM " + table1Name + " WHERE Scenarios.Serie = 0 ";
@@ -140,6 +139,15 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    public void deleteRecordScenario(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + table1Name+ " WHERE "+NameofScenario+"="+ "\"" + row_id+"\"");
+        Toast.makeText(context, "Usunięto scenariusz", Toast.LENGTH_SHORT).show();
+
+        db.close();
+
     }
 
     public ArrayList<Workout> getData(String name){

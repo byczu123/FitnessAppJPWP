@@ -1,4 +1,4 @@
-package com.example.fitness;
+package com.example.fitness.scenario;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.fitness.db.MyDatabaseHelper;
+import com.example.fitness.R;
+import com.example.fitness.adapters.ScenariosAdapter;
+import com.example.fitness.base.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -50,10 +54,7 @@ public class WorkoutRoutineActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void launchDays(View v) {
-        Intent i = new Intent(this, DaysActivity.class);
-        startActivity(i);
-    }
+
 
     public void launcher(View v) {
         //to do, if brak planu to days else to Baza

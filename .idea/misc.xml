@@ -48,8 +48,12 @@
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FinalFitness/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.178" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/drawable/custom_button.xml" value="0.28" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/drawable/custom_button2.xml" value="0.28" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_add_exercises.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_base.xml" value="0.3625" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_baza.xml" value="0.264" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_calendar.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_day.xml" value="0.28854166666666664" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_days.xml" value="0.30052083333333335" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_dodaj_cwiczenia.xml" value="0.1" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_dodaj_cwiczenie.xml" value="0.2515625" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_kalendarz.xml" value="0.25" />
@@ -60,8 +64,10 @@
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_scenariusze.xml" value="0.1" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_show_ex.xml" value="0.3625" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_show_scenario.xml" value="0.2875" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_triceps.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/activity_workout_routine.xml" value="0.2875" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/baselistview.xml" value="0.28854166666666664" />
+        <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/popup.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/popup_calendar.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/reps_popup.xml" value="0.2" />
         <entry key="..\:/Users/Jakub/AndroidStudioProjects/FitnessAppJPWP/app/src/main/res/layout/row.xml" value="0.3625" />

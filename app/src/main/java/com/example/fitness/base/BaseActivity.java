@@ -1,19 +1,17 @@
-package com.example.fitness;
+package com.example.fitness.base;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.fitness.adapters.AdapterForRecycler;
+import com.example.fitness.db.MyDatabaseHelper;
+import com.example.fitness.adapters.MyListAdapter;
+import com.example.fitness.R;
 
 import java.util.ArrayList;
 import java.util.Objects;

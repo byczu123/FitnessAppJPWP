@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowScenarioActivity">
+    tools:context=".scenario.ShowScenarioActivity">
 
     <TextView
         android:id="@+id/xmlName"
@@ -30,12 +30,14 @@
 
     <TextView
         android:id="@+id/xmlExercises"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="cwieczenia"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:scrollbars="vertical"
+        android:text="cwieczenia"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/xmlDesc" />
 
@@ -118,7 +120,8 @@
         app:layout_constraintBottom_toTopOf="@+id/xmlExercises"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
 
     <TextView
         android:id="@+id/textView2"
@@ -129,4 +132,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
