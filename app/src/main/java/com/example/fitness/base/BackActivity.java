@@ -46,7 +46,7 @@ public class BackActivity extends AppCompatActivity {
         adapter = new AdapterForRecycler(BackActivity.this, name, description, category, percent, getIntent());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(BackActivity.this));
-        deleteButton1 = (Button)findViewById(R.id.delete_new);
+        deleteButton1 = (Button)findViewById(R.id.deleteBtn);
 
 
     }

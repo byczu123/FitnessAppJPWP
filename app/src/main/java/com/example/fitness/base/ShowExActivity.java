@@ -31,7 +31,7 @@ public class ShowExActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ex);
-        add = findViewById(R.id.buttonAdd);
+        add = findViewById(R.id.addBtn);
         Intent i = getIntent();
         String name11 = i.getStringExtra("passName");
         Intent intent = getIntent();
@@ -49,15 +49,15 @@ public class ShowExActivity extends AppCompatActivity {
 
 
 
-        passedName = findViewById(R.id.name1);
-        passedDescription = findViewById(R.id.description1);
+        passedName = findViewById(R.id.nameOfExTxtView);
+        passedDescription = findViewById(R.id.descShowExTxtView);
 
         passedName.setText(name11);
         passedDescription.setText(name112);
 
         id = getIntent().getStringExtra("passName");
 
-        deleteButton1 = findViewById(R.id.delete_new);
+        deleteButton1 = findViewById(R.id.deleteBtn);
         myDB = new MyDatabaseHelper(this);
 
 
@@ -102,10 +102,10 @@ public class ShowExActivity extends AppCompatActivity {
     public void repsPopup(String name, String description, String exercise){
         builder = new AlertDialog.Builder(this);
         final View popupView = getLayoutInflater().inflate(R.layout.reps_popup, null);
-        nrOfReps = popupView.findViewById(R.id.reps);
-        nrOfSeries =  popupView.findViewById(R.id.series);
-        saveButton = (Button) popupView.findViewById(R.id.buttonSave);
-        cancelButton = (Button) popupView.findViewById(R.id.buttonCancel);
+        nrOfReps = popupView.findViewById(R.id.repsEditTxt);
+        nrOfSeries =  popupView.findViewById(R.id.seriesEditTxt);
+        saveButton = (Button) popupView.findViewById(R.id.savePopupBtn);
+        cancelButton = (Button) popupView.findViewById(R.id.cancelBtn);
 
         //int repsPop = (int)Integer.parseInt(nrOfReps.getText().toString());
         //int seriesPop= (int)Integer.parseInt(nrOfSeries.getText().toString());

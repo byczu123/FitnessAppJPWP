@@ -53,15 +53,15 @@ public class ShowScenarioActivity extends AppCompatActivity {
         int time = 0;
         id = getIntent().getStringExtra("scenName");
 
-        delete = findViewById(R.id.button2);
-        passedName = findViewById(R.id.xmlName);
-        passedDescription = findViewById(R.id.xmlDesc);
+        delete = findViewById(R.id.deleteScenBtn);
+        passedName = findViewById(R.id.scenNameTxtView);
+        passedDescription = findViewById(R.id.descScenTxtView);
         passedName.setText(passedN);
         passedDescription.setText(passedD);
-        listOfExercises = findViewById(R.id.xmlExercises);
+        listOfExercises = findViewById(R.id.exercisesTxtView);
         listOfExercises.setMovementMethod(new ScrollingMovementMethod());
-        calories = findViewById(R.id.xmlCalories);
-        timeOfTraining = findViewById(R.id.xmlTime);
+        calories = findViewById(R.id.caloriesTxtView);
+        timeOfTraining = findViewById(R.id.trainingTimeTxtView);
         workouts = myDB.getData(passedN);
         for (int j = 0; j < workouts.size(); j++) {
             exercises += workouts.get(j).workOutName + ": [" + workouts.get(j).reps + " reps] [" +
@@ -74,7 +74,7 @@ public class ShowScenarioActivity extends AppCompatActivity {
         calories.setText(String.valueOf(number));
         timeOfTraining.setText(String.valueOf(time));
 
-        add = findViewById(R.id.addEx);
+        add = findViewById(R.id.addExScenBtn);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

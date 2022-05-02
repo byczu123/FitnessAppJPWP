@@ -22,11 +22,11 @@ public class AddExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_exercises);
 
-        name_input = findViewById(R.id.editTextTextPersonName);
-        description_input = findViewById(R.id.editTextTextPersonName2);
-        level_input = findViewById(R.id.editTextNumber);
-        category = findViewById(R.id.spinner);
-        add = findViewById(R.id.button);
+        name_input = findViewById(R.id.nameOfExAddEditTxt);
+        description_input = findViewById(R.id.descAddExEditTxt);
+        level_input = findViewById(R.id.rpeEditTxt);
+        category = findViewById(R.id.spinnerAddEx);
+        add = findViewById(R.id.addExBtn);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

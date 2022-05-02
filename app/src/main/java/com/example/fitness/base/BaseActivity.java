@@ -46,7 +46,7 @@ public class BaseActivity extends AppCompatActivity{
 
         MyListAdapter adapter= new MyListAdapter(this, maintitle, imgid);
 
-        listView = (ListView)findViewById(R.id.listView1);
+        listView = (ListView)findViewById(R.id.CategoriesListView);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

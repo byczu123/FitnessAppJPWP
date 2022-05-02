@@ -64,10 +64,10 @@ public class WorkoutRoutineActivity extends AppCompatActivity {
     public void createNewWorkout(View view) {
         builder = new AlertDialog.Builder(this);
         final View popupView = getLayoutInflater().inflate(R.layout.popup, null);
-        workoutName = (EditText) popupView.findViewById(R.id.reps);
-        description = (EditText) popupView.findViewById(R.id.series);
-        saveButton = (Button) popupView.findViewById(R.id.buttonSave);
-        cancelButton = (Button) popupView.findViewById(R.id.buttonCancel);
+        workoutName = (EditText) popupView.findViewById(R.id.repsEditTxt);
+        description = (EditText) popupView.findViewById(R.id.seriesEditTxt);
+        saveButton = (Button) popupView.findViewById(R.id.savePopupBtn);
+        cancelButton = (Button) popupView.findViewById(R.id.cancelBtn);
 
         builder.setView(popupView);
         dialog = builder.create();

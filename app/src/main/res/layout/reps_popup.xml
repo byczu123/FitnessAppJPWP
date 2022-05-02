@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditText
-        android:id="@+id/reps"
+        android:id="@+id/repsEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -18,10 +18,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/series"
+        android:id="@+id/seriesEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/reps"
+        android:layout_below="@+id/repsEditTxt"
         android:layout_marginBottom="16dp"
         android:inputType="number"
         android:text="0"
@@ -31,10 +31,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/savePopupBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/series"
+        android:layout_below="@+id/seriesEditTxt"
         android:layout_centerVertical="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -43,14 +43,14 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/buttonCancel"
+        android:id="@+id/cancelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/series"
+        android:layout_below="@id/seriesEditTxt"
         android:layout_centerVertical="true"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
-        android:layout_toRightOf="@+id/buttonSave"
+        android:layout_toRightOf="@+id/savePopupBtn"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
