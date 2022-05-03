@@ -8,7 +8,7 @@ import android.widget.ListView;
 import com.example.fitness.R;
 
 public class CalendarActivity extends AppCompatActivity {
-    private ListView PlanBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

@@ -16,15 +16,18 @@ import com.example.fitness.R;
 import java.util.ArrayList;
 
 public class TricepsActivity extends AppCompatActivity {
+
     static RecyclerView recyclerView;
     MyDatabaseHelper myDB;
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triceps);
+
         Intent i = getIntent();
         String cat = i.getStringExtra("category");
         recyclerView = findViewById(R.id.TricepsrecycleView);

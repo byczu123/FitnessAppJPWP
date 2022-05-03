@@ -27,6 +27,7 @@ public class AddExerciseActivity extends AppCompatActivity {
         level_input = findViewById(R.id.rpeEditTxt);
         category = findViewById(R.id.spinnerAddEx);
         add = findViewById(R.id.addExBtn);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

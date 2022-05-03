@@ -23,14 +23,10 @@ public class ChestActivity extends AppCompatActivity {
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chest);
-
 
         Intent i = getIntent();
         String cat = i.getStringExtra("category");
@@ -41,7 +37,6 @@ public class ChestActivity extends AppCompatActivity {
         description = new ArrayList<>();
         category = new ArrayList<>();
         percent = new ArrayList<>();
-
 
         storeInArrays(cat);
         adapter = new AdapterForRecycler(ChestActivity.this, name, description, category, percent, getIntent());

@@ -22,6 +22,7 @@ public class ShouldersActivity extends AppCompatActivity {
     ArrayList<String> name, description, category;
     ArrayList<Integer> percent;
     static AdapterForRecycler adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

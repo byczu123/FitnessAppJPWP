@@ -21,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b1 = findViewById(R.id.baseBtn);
-        b2 = findViewById(R.id.calendarBtn);
-        b3 = findViewById(R.id.scenarioBtn);
+
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://www.budujmase.pl/trening/trening-techniczny-technika-cwiczen-na-silowni.html");
+        b1 = findViewById(R.id.baseBtn);
+        b2 = findViewById(R.id.calendarBtn);
+        b3 = findViewById(R.id.scenarioBtn);
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -18,10 +18,6 @@ import java.util.Objects;
 
 public class BaseActivity extends AppCompatActivity{
 
-    MyDatabaseHelper myDB;
-    ArrayList<String> name, description, category;
-    ArrayList<Integer> percent;
-    static AdapterForRecycler adapter;
     ListView listView;
 
     String[] maintitle ={

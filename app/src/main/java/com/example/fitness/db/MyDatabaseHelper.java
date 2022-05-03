@@ -21,7 +21,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String tableName = "Exercises";
     private static final String table1Name = "Scenarios";
 
-
     private static final String ExIdColumn = "_id";
     private static final String NameOfExColumn = "Nazwa";
     private static final String DescriptionColumn = "Opis";
@@ -35,15 +34,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     ArrayList<Workout> workout = new ArrayList<>();
 
 
-
-
-
-
     public MyDatabaseHelper(@Nullable Context context ) {
         super(context, dbName, null, versionOfDB);
         this.context=context;
     }
-
 
 
     @Override
@@ -59,8 +53,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 Series + " INTEGER) ;";
         db.execSQL(query);
         db.execSQL(query1);
-
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
@@ -69,8 +63,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
-
+    //Exercises part
     public void addEx(String cv_name, String cv_description, String cv_category, int cv_level){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -85,8 +78,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Dodano nowe ćwiczenie", Toast.LENGTH_SHORT).show();
         }
         db.close();
-
     }
+
 
     public Cursor injectData(String inject_category){
         String query = "SELECT * FROM " + tableName + " WHERE " +
@@ -99,6 +92,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+
     public void deleteRecord(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         //db.delete(dbName, "Nazwa=?", new String[]{row_id});
@@ -106,9 +100,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         Toast.makeText(context, "Usunięto ćwiczenie", Toast.LENGTH_SHORT).show();
 
         db.close();
-
     }
 
+
+    //Scenarios part
     public void addScenario(String name, String descr, String exercise, int reps, int series){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -127,6 +122,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public Cursor injectDataScenarios(){
         String query = "SELECT Scenarios.Nazwa_scenariuszu, " +
                 "Scenarios.Opis_scenariusza" +
@@ -141,14 +137,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+
     public void deleteRecordScenario(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + table1Name+ " WHERE "+NameofScenario+"="+ "\"" + row_id+"\"");
         Toast.makeText(context, "Usunięto scenariusz", Toast.LENGTH_SHORT).show();
 
         db.close();
-
     }
+
 
     public ArrayList<Workout> getData(String name){
         SQLiteDatabase db = this.getReadableDatabase();

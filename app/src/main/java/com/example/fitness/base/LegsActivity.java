@@ -41,6 +41,7 @@ public class LegsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(LegsActivity.this));
     }
+
     void storeInArrays(String injected) {
         Cursor cursor = myDB.injectData(injected);
         if (cursor.getCount() == 0) {

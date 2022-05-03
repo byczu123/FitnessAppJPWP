@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.fitness.R;
 
 public class MyListAdapter extends ArrayAdapter<String> {
@@ -19,7 +18,6 @@ public class MyListAdapter extends ArrayAdapter<String> {
 
     public MyListAdapter(Activity context, String[] maintitle, Integer[] imgid) {
         super(context, R.layout.baselistview, maintitle);
-        // TODO Auto-generated constructor stub
 
         this.context=context;
         this.maintitle=maintitle;
