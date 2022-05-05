@@ -22,6 +22,7 @@
     <string name="calendar">Calendar</string>
     <string name="pick">Pick</string>
     <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
     <string-array name="Trainings7">
         <item>Training 1</item>
         <item>Training 2</item>

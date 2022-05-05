@@ -80,6 +80,7 @@ public class WorkoutRoutineActivity extends AppCompatActivity {
                 myDB.addScenario(workoutName.getText().toString().trim(),
                         description.getText().toString().trim(),
                         null, 0, 0);
+                finish();
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
