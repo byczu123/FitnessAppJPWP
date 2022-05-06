@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.fitness.db.MyDatabaseHelper;
 import com.example.fitness.R;
+import com.example.fitness.main.MainActivity;
 
 import java.util.Objects;
 
@@ -120,6 +121,8 @@ public class ShowExActivity extends AppCompatActivity {
                 int repsPop = (int)Integer.parseInt(nrOfReps.getText().toString());
                 int seriesPop= (int)Integer.parseInt(nrOfSeries.getText().toString());
                 addExercise(name, description, exercise, repsPop, seriesPop);
+                Intent intent = new Intent(ShowExActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {

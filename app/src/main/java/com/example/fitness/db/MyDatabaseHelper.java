@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.fitness.calendar.Days;
 import com.example.fitness.scenario.Workout;
 
 import java.util.ArrayList;
@@ -17,9 +18,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String dbName = "Exercises.db";
-    private static final int versionOfDB = 5;
+    private static final int versionOfDB = 6;
     private static final String tableName = "Exercises";
     private static final String table1Name = "Scenarios";
+    private static final String table2Name = "Dates";
 
     private static final String ExIdColumn = "_id";
     private static final String NameOfExColumn = "Nazwa";
@@ -31,7 +33,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String DescOfScenario = "Opis_scenariusza";
     private static final String Reps = "Powtórzenia";
     private static final String Series = "Serie";
+    private static final String Day = "Dzień";
     ArrayList<Workout> workout = new ArrayList<>();
+    ArrayList<Days> plan = new ArrayList<>();
 
 
     public MyDatabaseHelper(@Nullable Context context ) {
@@ -51,8 +55,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 NameofScenario + " TEXT, " + DescOfScenario +
                 " TEXT, " + NameofExInScenario + " TEXT, " + Reps + " INTEGER, " +
                 Series + " INTEGER) ;";
+        String query2 = "CREATE TABLE IF NOT EXISTS " + table2Name + " (" +
+                Day + " TEXT, " + NameofScenario +
+                " TEXT) ;";
         db.execSQL(query);
         db.execSQL(query1);
+        db.execSQL(query2);
     }
 
 
@@ -60,6 +68,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + tableName);
         db.execSQL("DROP TABLE IF EXISTS " + table1Name);
+        db.execSQL("DROP TABLE IF EXISTS " + table2Name);
         onCreate(db);
     }
 
@@ -161,6 +170,45 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             workout.add(ex);
         }
         return workout;
+    }
+
+    public void confirmDate(String date, String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(Day, date);
+        cv.put(NameofScenario, name);
+        long result = db.insert(table2Name, null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Nie udało się dodać do planu", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Dodano do planu", Toast.LENGTH_SHORT).show();
+        }
+        db.close();
+
+    }
+
+    public ArrayList<Days> getDate(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " +
+                table2Name  + " WHERE " + NameofScenario + " = " + "\"" + name + "\"";
+        Cursor cursor = db.rawQuery(query, null);
+        while(cursor.moveToNext()){
+            Days days = new Days(cursor.getString(0), cursor.getString(1));
+            plan.add(days);
+        }
+        return plan;
+    }
+
+    public ArrayList<Days> returnAll(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " +
+                table2Name;
+        Cursor cursor = db.rawQuery(query, null);
+        while(cursor.moveToNext()){
+            Days days = new Days(cursor.getString(0), cursor.getString(1));
+            plan.add(days);
+        }
+        return plan;
     }
 
     /*
